@@ -1,11 +1,12 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import "./Footer.scss";
+
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer>
-      <ul>
+    <footer className={styles.footer}>
+      <ul className={styles.social_list}>
         <li>
           <FaFacebook />
         </li>
@@ -16,7 +17,7 @@ const Footer = () => {
           <FaLinkedin />
         </li>
       </ul>
-      <p>
+      <p className={styles.copyright}>
         <span>Costs</span> &copy; - 2023
       </p>
     </footer>
