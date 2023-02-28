@@ -1,21 +1,27 @@
 import React from "react";
+import Input from "../form/Input";
+import Select from "../form/Select";
+import SubmitButton from "../form/SubmitButton";
 
-const ProjectForm = () => {
+import styles from "./ProjectForm.module.css";
+
+const ProjectForm = ({ btnText }) => {
   return (
-    <form>
-      <div>
-        <input type="text" placeholder="Insira o nome do projeto" />
-      </div>
-      <div>
-        <input type="number" placeholder="Insira o orçamento total " />
-      </div>
-      <div>
-        <select name="category_id">
-          <option selected disabled>
-            Selecione a categoria
-          </option>
-        </select>
-      </div>
+    <form className={styles.form} autoComplete="off">
+      <Input
+        type="text"
+        text="Insira o nome do projeto"
+        placeholder="Insira o nome do projeto"
+        name="name"
+      />
+      <Input
+        type="number"
+        text="Orçamento do projeto"
+        placeholder="Insira o orçamento total"
+        name="budget"
+      />
+      <Select name="category_id" text="Selecione a categoria" />
+      <SubmitButton text={btnText} />
     </form>
   );
 };
