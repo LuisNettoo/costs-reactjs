@@ -15,19 +15,17 @@ import Projects from "./pages/Projects";
 const App = () => {
   return (
     <Router>
-      <div className="main-content">
-        <Navbar />
-        <Container>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/newproject" element={<Newproject />} />
-          </Routes>
-        </Container>
-        <Footer />
-      </div>
+      <Navbar />
+      <Container customClass="min__heigth">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/newproject" element={<Newproject />} />
+        </Routes>
+      </Container>
+      <Footer />
     </Router>
   );
 };
