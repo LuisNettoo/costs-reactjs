@@ -12,6 +12,7 @@
 <ul>
  <li>React Routes</li>
  <li>React Icons</li>
+ <li>Json Server</li>
 </ul>
 
 # Iniciar o projeto
