@@ -2,27 +2,47 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import Message from "../layout/Message";
-import Container from '../layout/Container'
-import LinkButton from '../layout/LinkButton'
+import Container from "../layout/Container";
+import LinkButton from "../layout/LinkButton";
 import ProjectCard from "../project/ProjectCard";
 
-import styles from './Projects.module.css'
+import styles from "./Projects.module.css";
+import Loading from "../layout/Loading";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
+  const [removeLoading, setRemoveLoading] = useState(false);
+  const [projectMessage, setProjectMessage] = useState("");
 
   useEffect(() => {
-    fetch('http://localhost:5000/projects', {
-      method: 'GET',
+    fetch("http://localhost:5000/projects", {
+      method: "GET",
       headers: {
-        'Content-type': 'application/json'
-      }
-    }).then(resp => resp.json())
-    .then(data => {
-      setProjects(data)
+        "Content-type": "application/json",
+      },
     })
-    .catch(err => console.log(err))
-  }, [])
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProjects(data);
+        setRemoveLoading(true);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const removeProject = (id) => {
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProjects(projects.filter((project) => project.id !== id));
+        setProjectMessage("Projeto removido com sucesso!");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const location = useLocation();
   let message = "";
@@ -35,21 +55,26 @@ const Projects = () => {
     <div className={styles.project_container}>
       <div className={styles.title_container}>
         <h1>Meus projetos</h1>
-        <LinkButton to='/newproject' text='Criar Projeto' />
+        <LinkButton to="/newproject" text="Criar Projeto" />
       </div>
       {message && <Message msg={message} type="sucess" />}
-      <Container customClass='start'>
-        {projects.length > 0 && 
+      {projectMessage !== "" && <Message msg={projectMessage} type="sucess" />}
+      <Container customClass="start">
+        {projects.length > 0 &&
           projects.map((project) => (
-            <ProjectCard 
+            <ProjectCard
               id={project.id}
               name={project.name}
               budget={project.budget}
               category={project.category.name}
               key={project.id}
+              handleRemove={removeProject}
             />
-          ))
-        }
+          ))}
+        {!removeLoading && <Loading />}
+        {removeLoading && projects.length === 0 && (
+          <p>Não há projetos cadastrados!</p>
+        )}
       </Container>
     </div>
   );
