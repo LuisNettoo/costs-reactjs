@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Testando",
-      "budget": "7000",
+      "budget": "5000",
       "category": {
         "id": "4",
         "name": "Planejamento"
@@ -18,8 +18,21 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 12400,
+      "services": [
+        {
+          "name": "Comprar licenças de imagens do Donatello",
+          "cost": "7800",
+          "description": "Comprar a licença para utilizar no main page do site",
+          "id": "b8839291-d0b4-4f26-97f5-3258cc2a86c8"
+        },
+        {
+          "name": "Contratar um design",
+          "cost": "4600",
+          "description": "Contratar um design para lider o time de design",
+          "id": "aa3af0b9-999d-4af4-aef0-caec617d1453"
+        }
+      ],
       "id": 2
     }
   ],
