@@ -2,10 +2,10 @@
   "projects": [
     {
       "name": "Testando",
-      "budget": "123",
+      "budget": "7000",
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "4",
+        "name": "Planejamento"
       },
       "cost": 0,
       "services": [],
@@ -13,7 +13,7 @@
     },
     {
       "name": "Identidade Visual",
-      "budget": "7000",
+      "budget": "15000",
       "category": {
         "id": "3",
         "name": "Design"
