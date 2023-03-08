@@ -1,58 +1,22 @@
 {
   "projects": [
     {
-      "name": "Testando",
-      "budget": "10000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 8200,
-      "services": [
-        {
-          "name": "Contratar um Product Owner",
-          "cost": "4500",
-          "description": "Contrato de um profissional para liderar todas as equipes envolvidas nesse projeto desse produto",
-          "id": "3b0c931c-7fdd-4aee-828d-6612ebe47feb"
-        },
-        {
-          "name": "Comprar 4 packs de papel A4",
-          "cost": "500",
-          "description": "Compra de papeis para as impressoras do departamento de lideres",
-          "id": "951b48d2-b007-4a24-902c-aa5bc429589a"
-        },
-        {
-          "name": "Contrar um Gerente",
-          "cost": "3200",
-          "description": "Contrato de um profissional para liderar as equipes individuais de cada departamento",
-          "id": "1b9f4408-cd18-4389-abe1-f5ebfe8e41c5"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "name": "Identidade Visual",
-      "budget": "15000",
+      "name": "Testando backend",
+      "budget": "25000",
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "cost": 12400,
+      "cost": 25000,
       "services": [
         {
-          "name": "Comprar licenças de imagens do Donatello",
-          "cost": "7800",
-          "description": "Comprar a licença para utilizar no main page do site",
-          "id": "b8839291-d0b4-4f26-97f5-3258cc2a86c8"
-        },
-        {
-          "name": "Contratar um design",
-          "cost": "4600",
-          "description": "Contratar um design para lider o time de design",
-          "id": "aa3af0b9-999d-4af4-aef0-caec617d1453"
+          "name": "Contratar Dev Node.js",
+          "cost": "25000",
+          "description": "Contrato de um desenvolvedor responsavel por criar o backend da nossa aplicação",
+          "id": "64971030-4383-4e85-9f56-edcc618d1b89"
         }
       ],
-      "id": 2
+      "id": 1
     }
   ],
   "categories": [
