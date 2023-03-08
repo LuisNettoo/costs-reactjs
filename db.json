@@ -2,13 +2,32 @@
   "projects": [
     {
       "name": "Testando",
-      "budget": "5000",
+      "budget": "10000",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 8200,
+      "services": [
+        {
+          "name": "Contratar um Product Owner",
+          "cost": "4500",
+          "description": "Contrato de um profissional para liderar todas as equipes envolvidas nesse projeto desse produto",
+          "id": "3b0c931c-7fdd-4aee-828d-6612ebe47feb"
+        },
+        {
+          "name": "Comprar 4 packs de papel A4",
+          "cost": "500",
+          "description": "Compra de papeis para as impressoras do departamento de lideres",
+          "id": "951b48d2-b007-4a24-902c-aa5bc429589a"
+        },
+        {
+          "name": "Contrar um Gerente",
+          "cost": "3200",
+          "description": "Contrato de um profissional para liderar as equipes individuais de cada departamento",
+          "id": "1b9f4408-cd18-4389-abe1-f5ebfe8e41c5"
+        }
+      ],
       "id": 1
     },
     {
