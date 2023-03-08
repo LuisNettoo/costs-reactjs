@@ -7,15 +7,8 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 25000,
-      "services": [
-        {
-          "name": "Contratar Dev Node.js",
-          "cost": "25000",
-          "description": "Contrato de um desenvolvedor responsavel por criar o backend da nossa aplicação",
-          "id": "64971030-4383-4e85-9f56-edcc618d1b89"
-        }
-      ],
+      "cost": 0,
+      "services": [],
       "id": 1
     }
   ],
