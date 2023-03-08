@@ -77,8 +77,29 @@ const Project = () => {
     setShowServiceForm(!showServiceForm);
   };
 
-  const removeService = () => {
-    return;
+  const removeService = (id, cost) => {
+    const servicesUpdate = project.services.filter(
+      (service) => service.id !== id
+    );
+
+    const projectUpdated = project;
+
+    projectUpdated.services = servicesUpdate;
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost);
+
+    fetch(`http://localhost:5000/projects/${project.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(projectUpdated),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(projectUpdated);
+        setMessage("Serviço removido com sucesso!");
+      })
+      .catch((err) => console.log(err));
   };
 
   const editPost = (project) => {
