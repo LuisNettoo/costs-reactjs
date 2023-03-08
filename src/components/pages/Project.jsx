@@ -9,11 +9,13 @@ import Loading from "../layout/Loading";
 import ProjectForm from "../project/ProjectForm";
 import Message from "../layout/Message";
 import ServiceForm from "../service/ServiceForm";
+import ServiceCard from "../service/ServiceCard";
 
 const Project = () => {
   const { id } = useParams();
 
   const [project, setProject] = useState([]);
+  const [services, setServices] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [showServiceForm, setShowServiceForm] = useState(false);
   const [message, setMessage] = useState();
@@ -29,6 +31,7 @@ const Project = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setProject(data);
+        setServices(data.services);
       });
   }, [id]);
 
@@ -58,7 +61,7 @@ const Project = () => {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        setShowServiceForm(false);
       })
       .catch((err) => console.log(err));
 
@@ -72,6 +75,10 @@ const Project = () => {
 
   const toggleServiceForm = () => {
     setShowServiceForm(!showServiceForm);
+  };
+
+  const removeService = () => {
+    return;
   };
 
   const editPost = (project) => {
@@ -150,7 +157,18 @@ const Project = () => {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              <p>itens do serviço</p>
+              {services.length > 0 &&
+                services.map((service) => (
+                  <ServiceCard
+                    id={service.id}
+                    key={service.id}
+                    name={service.name}
+                    cost={service.cost}
+                    description={service.description}
+                    handleRemove={removeService}
+                  />
+                ))}
+              {services.length === 0 && <p>Não há servicos cadastrados!</p>}
             </Container>
           </Container>
         </div>
