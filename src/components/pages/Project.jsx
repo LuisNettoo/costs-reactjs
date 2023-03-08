@@ -33,7 +33,7 @@ const Project = () => {
         setProject(data);
         setServices(data.services);
       });
-  }, [id]);
+  }, [services]);
 
   const createService = (project) => {
     setMessage("");
@@ -97,6 +97,7 @@ const Project = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setProject(projectUpdated);
+        setType("sucess");
         setMessage("Serviço removido com sucesso!");
       })
       .catch((err) => console.log(err));
